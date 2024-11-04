@@ -1,0 +1,12 @@
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\bin\Debug\CadParcial2Mevy.dll.config
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\bin\Debug\CadParcial2Mevy.dll
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\bin\Debug\CadParcial2Mevy.pdb
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\bin\Debug\EntityFramework.dll
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\bin\Debug\EntityFramework.SqlServer.dll
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\bin\Debug\EntityFramework.xml
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\bin\Debug\EntityFramework.SqlServer.xml
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\obj\Debug\CadParcial2Mevy.csproj.AssemblyReference.cache
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\obj\Debug\CadParcial2Mevy.csproj.CoreCompileInputs.cache
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\obj\Debug\CadParci.D6A25401.Up2Date
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\obj\Debug\CadParcial2Mevy.dll
+D:\Parcial2Mevy\Parcial2Mevy\CadParcial2Mevy\obj\Debug\CadParcial2Mevy.pdb

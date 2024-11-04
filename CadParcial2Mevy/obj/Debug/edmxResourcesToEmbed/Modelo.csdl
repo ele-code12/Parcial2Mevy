@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Parcial2MevyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Serie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="sinopsis" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="director" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="episodios" Type="Int32" />
+    <Property Name="fecha_estreno" Type="DateTime" Precision="0" />
+    <Property Name="estado" Type="Int16" />
+  </EntityType>
+  <EntityContainer Name="Parcial2MevyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Serie" EntityType="Self.Serie" />
+    <FunctionImport Name="paSerieListar" ReturnType="Collection(Parcial2MevyModel.paSerieListar_Result)">
+      <Parameter Name="parametro" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="paSerieListar_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="titulo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="sinopsis" Nullable="true" MaxLength="5000" />
+    <Property Type="String" Name="director" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="episodios" Nullable="true" />
+    <Property Type="DateTime" Name="fecha_estreno" Nullable="true" />
+    <Property Type="Int16" Name="estado" Nullable="true" />
+  </ComplexType>
+</Schema>
