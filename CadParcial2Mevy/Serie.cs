@@ -21,5 +21,6 @@ namespace CadParcial2Mevy
         public Nullable<int> episodios { get; set; }
         public Nullable<System.DateTime> fecha_estreno { get; set; }
         public Nullable<short> estado { get; set; }
+        public string idioma_principal { get; set; }
     }
 }

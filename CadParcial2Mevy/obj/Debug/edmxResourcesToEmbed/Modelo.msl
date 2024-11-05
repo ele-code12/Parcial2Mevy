@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Parcial2MevyModelStoreContainer" CdmEntityContainer="Parcial2MevyEntities">
+  <EntityContainerMapping StorageEntityContainer="Parcial2MevyModelStoreContainer" CdmEntityContainer="Parcial2MevyEntities1">
     <EntitySetMapping Name="Serie">
       <EntityTypeMapping TypeName="Parcial2MevyModel.Serie">
         <MappingFragment StoreEntitySet="Serie">
@@ -11,6 +11,7 @@
           <ScalarProperty Name="episodios" ColumnName="episodios" />
           <ScalarProperty Name="fecha_estreno" ColumnName="fecha_estreno" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idioma_principal" ColumnName="idioma_principal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -24,6 +25,7 @@
           <ScalarProperty Name="episodios" ColumnName="episodios" />
           <ScalarProperty Name="fecha_estreno" ColumnName="fecha_estreno" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="idioma_principal" ColumnName="idioma_principal" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

@@ -11,7 +11,7 @@ namespace ClnParcial2Mevy
     {
         public static int Insertar(Serie serie)
         {
-            using (var context = new Parcial2MevyEntities())
+            using (var context = new Parcial2MevyEntities1())
             {
                 context.Serie.Add(serie);
                 context.SaveChanges();
@@ -21,7 +21,7 @@ namespace ClnParcial2Mevy
 
         public static int Actualizar(Serie serie)
         {
-            using (var context = new Parcial2MevyEntities())
+            using (var context = new Parcial2MevyEntities1())
             {
                 var existente = context.Serie.Find(serie.id);
                 if (existente != null)
@@ -32,6 +32,7 @@ namespace ClnParcial2Mevy
                     existente.episodios = serie.episodios;
                     existente.fecha_estreno = serie.fecha_estreno;
                     existente.estado = serie.estado;
+                    existente.idioma_principal = serie.idioma_principal;
                     return context.SaveChanges();
                 }
                 return 0;
@@ -39,7 +40,7 @@ namespace ClnParcial2Mevy
         }
         public static int Eliminar(int id, string usuario)
         {
-            using (var context = new Parcial2MevyEntities())
+            using (var context = new Parcial2MevyEntities1())
             {
                 var serie = context.Serie.Find(id);
                 if (serie != null)
@@ -52,7 +53,7 @@ namespace ClnParcial2Mevy
         }
         public static Serie ObtenerUno(int id)
         {
-            using (var context = new Parcial2MevyEntities())
+            using (var context = new Parcial2MevyEntities1())
             {
                 return context.Serie.Find(id);
             }
@@ -60,15 +61,16 @@ namespace ClnParcial2Mevy
 
         public static List<Serie> Listar()
         {
-            using (var context = new Parcial2MevyEntities())
+            using (var context = new Parcial2MevyEntities1())
             {
                 return context.Serie.Where(x => x.estado != -1).ToList();
+         
             }
         }
 
         public static List<paSerieListar_Result> ListarPa(string parametro)
         {
-            using (var context = new Parcial2MevyEntities())
+            using (var context = new Parcial2MevyEntities1())
             {
                 return context.paSerieListar(parametro).ToList();
             }

@@ -85,7 +85,8 @@ namespace CpParcial2Mervy
                     director = txtDirector.Text.Trim(),
                     episodios = int.Parse(nudEpisodios.Value.ToString()),
                     fecha_estreno = DateTime.Parse(dtpFechaEstreno.Value.ToString()), 
-                    estado = (short)(int)nudestado.Value 
+                    estado = (short)(int)nudestado.Value,
+                    idioma_principal = cbxIdiomaPrincipal.Text.Trim()
                 };
 
                 if (esNuevo)
@@ -102,7 +103,7 @@ namespace CpParcial2Mervy
 
                 listar();
                 btnCancelar.PerformClick();
-                MessageBox.Show("Serie guardada correctamente", "::: Minerva - Mensaje :::",
+                MessageBox.Show("Serie guardada correctamente", "::: Serie - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -118,6 +119,7 @@ namespace CpParcial2Mervy
             erpEpisodios.SetError(nudEpisodios, "");
             erpFechaEstreno.SetError(dtpFechaEstreno, "");
             erpEstado.SetError(nudestado, "");
+            erpIdiomaPrincipal.SetError(cbxIdiomaPrincipal, "");
 
           
             if (string.IsNullOrEmpty(txtTitulo.Text))
@@ -161,6 +163,14 @@ namespace CpParcial2Mervy
                 erpEstado.SetError(nudestado, "El Estado no puede ser negativo");
             }
 
+            if (string.IsNullOrEmpty(cbxIdiomaPrincipal.Text))
+            {
+                esValido = false;
+                erpIdiomaPrincipal.SetError(cbxIdiomaPrincipal, "El campo idioma principal es obligatorio");
+            }
+
+
+
             return esValido;
         }
 
@@ -172,6 +182,7 @@ namespace CpParcial2Mervy
             nudEpisodios.Text = dgvSerie.SelectedRows[0].Cells["episodios"].Value.ToString();
             dtpFechaEstreno.Text = dgvSerie.SelectedRows[0].Cells["fecha_estreno"].Value.ToString();
             nudestado.Text = dgvSerie.SelectedRows[0].Cells["estado"].Value.ToString();
+            cbxIdiomaPrincipal.Text = dgvSerie.SelectedRows[0].Cells["idioma_principal"].Value.ToString();
         }
 
         private void HabilitarCampos(bool habilitar)
@@ -180,9 +191,10 @@ namespace CpParcial2Mervy
             txtSinopsis.Enabled = habilitar;
             txtDirector.Enabled = habilitar;
             nudEpisodios.Enabled = habilitar;
-            dtpFechaEstreno.Enabled = habilitar;
+           dtpFechaEstreno.Enabled = habilitar;
             nudestado.Enabled = habilitar;
             btnGuardar.Enabled = habilitar;
+            cbxIdiomaPrincipal.Enabled = habilitar;
         }
 
 
@@ -192,8 +204,8 @@ namespace CpParcial2Mervy
             txtSinopsis.Text = "";
             txtDirector.Text = "";
             nudEpisodios.Text = "";
-            dtpFechaEstreno.Text = "";
             nudestado.Text = "";
+            cbxIdiomaPrincipal.Text = "";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

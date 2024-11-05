@@ -15,10 +15,10 @@ namespace CadParcial2Mevy
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Parcial2MevyEntities : DbContext
+    public partial class Parcial2MevyEntities1 : DbContext
     {
-        public Parcial2MevyEntities()
-            : base("name=Parcial2MevyEntities")
+        public Parcial2MevyEntities1()
+            : base("name=Parcial2MevyEntities1")
         {
         }
     

@@ -11,8 +11,9 @@
     <Property Name="episodios" Type="Int32" />
     <Property Name="fecha_estreno" Type="DateTime" Precision="0" />
     <Property Name="estado" Type="Int16" />
+    <Property Name="idioma_principal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="Parcial2MevyEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Parcial2MevyEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Serie" EntityType="Self.Serie" />
     <FunctionImport Name="paSerieListar" ReturnType="Collection(Parcial2MevyModel.paSerieListar_Result)">
       <Parameter Name="parametro" Mode="In" Type="String" />
@@ -26,5 +27,6 @@
     <Property Type="Int32" Name="episodios" Nullable="true" />
     <Property Type="DateTime" Name="fecha_estreno" Nullable="true" />
     <Property Type="Int16" Name="estado" Nullable="true" />
+    <Property Type="String" Name="idioma_principal" Nullable="true" MaxLength="250" />
   </ComplexType>
 </Schema>

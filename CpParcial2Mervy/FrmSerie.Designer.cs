@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.lblFechaEstreno = new System.Windows.Forms.Label();
+            this.dtpFechaEstreno = new System.Windows.Forms.DateTimePicker();
             this.txtDirector = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -52,14 +54,15 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dtpFechaEstreno = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaEstreno = new System.Windows.Forms.Label();
             this.erpTitulo = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpSinopsis = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpDirector = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpEpisodios = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpEstado = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpFechaEstreno = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblIdiomaPrincipal = new System.Windows.Forms.Label();
+            this.erpIdiomaPrincipal = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbxIdiomaPrincipal = new System.Windows.Forms.ComboBox();
             this.gbxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudestado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEpisodios)).BeginInit();
@@ -72,10 +75,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.erpEpisodios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpFechaEstreno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpIdiomaPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxDatos
             // 
+            this.gbxDatos.Controls.Add(this.cbxIdiomaPrincipal);
+            this.gbxDatos.Controls.Add(this.lblIdiomaPrincipal);
             this.gbxDatos.Controls.Add(this.lblFechaEstreno);
             this.gbxDatos.Controls.Add(this.dtpFechaEstreno);
             this.gbxDatos.Controls.Add(this.txtDirector);
@@ -92,10 +98,29 @@
             this.gbxDatos.Controls.Add(this.lblCodigo);
             this.gbxDatos.Location = new System.Drawing.Point(17, 303);
             this.gbxDatos.Name = "gbxDatos";
-            this.gbxDatos.Size = new System.Drawing.Size(775, 123);
+            this.gbxDatos.Size = new System.Drawing.Size(775, 163);
             this.gbxDatos.TabIndex = 13;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos";
+            // 
+            // lblFechaEstreno
+            // 
+            this.lblFechaEstreno.AutoSize = true;
+            this.lblFechaEstreno.Location = new System.Drawing.Point(358, 90);
+            this.lblFechaEstreno.Name = "lblFechaEstreno";
+            this.lblFechaEstreno.Size = new System.Drawing.Size(79, 13);
+            this.lblFechaEstreno.TabIndex = 14;
+            this.lblFechaEstreno.Text = "Fecha Estreno:";
+            // 
+            // dtpFechaEstreno
+            // 
+            this.dtpFechaEstreno.Enabled = false;
+            this.dtpFechaEstreno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaEstreno.Location = new System.Drawing.Point(464, 86);
+            this.dtpFechaEstreno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaEstreno.Name = "dtpFechaEstreno";
+            this.dtpFechaEstreno.Size = new System.Drawing.Size(122, 20);
+            this.dtpFechaEstreno.TabIndex = 13;
             // 
             // txtDirector
             // 
@@ -330,25 +355,6 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dtpFechaEstreno
-            // 
-            this.dtpFechaEstreno.Enabled = false;
-            this.dtpFechaEstreno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEstreno.Location = new System.Drawing.Point(464, 86);
-            this.dtpFechaEstreno.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpFechaEstreno.Name = "dtpFechaEstreno";
-            this.dtpFechaEstreno.Size = new System.Drawing.Size(122, 20);
-            this.dtpFechaEstreno.TabIndex = 13;
-            // 
-            // lblFechaEstreno
-            // 
-            this.lblFechaEstreno.AutoSize = true;
-            this.lblFechaEstreno.Location = new System.Drawing.Point(358, 90);
-            this.lblFechaEstreno.Name = "lblFechaEstreno";
-            this.lblFechaEstreno.Size = new System.Drawing.Size(79, 13);
-            this.lblFechaEstreno.TabIndex = 14;
-            this.lblFechaEstreno.Text = "Fecha Estreno:";
-            // 
             // erpTitulo
             // 
             this.erpTitulo.ContainerControl = this;
@@ -372,6 +378,31 @@
             // erpFechaEstreno
             // 
             this.erpFechaEstreno.ContainerControl = this;
+            // 
+            // lblIdiomaPrincipal
+            // 
+            this.lblIdiomaPrincipal.AutoSize = true;
+            this.lblIdiomaPrincipal.Location = new System.Drawing.Point(358, 116);
+            this.lblIdiomaPrincipal.Name = "lblIdiomaPrincipal";
+            this.lblIdiomaPrincipal.Size = new System.Drawing.Size(84, 13);
+            this.lblIdiomaPrincipal.TabIndex = 16;
+            this.lblIdiomaPrincipal.Text = "Idioma Principal:";
+            // 
+            // erpIdiomaPrincipal
+            // 
+            this.erpIdiomaPrincipal.ContainerControl = this;
+            // 
+            // cbxIdiomaPrincipal
+            // 
+            this.cbxIdiomaPrincipal.FormattingEnabled = true;
+            this.cbxIdiomaPrincipal.Items.AddRange(new object[] {
+            "español",
+            "ingles",
+            "chino"});
+            this.cbxIdiomaPrincipal.Location = new System.Drawing.Point(462, 116);
+            this.cbxIdiomaPrincipal.Name = "cbxIdiomaPrincipal";
+            this.cbxIdiomaPrincipal.Size = new System.Drawing.Size(121, 21);
+            this.cbxIdiomaPrincipal.TabIndex = 18;
             // 
             // FrmSerie
             // 
@@ -402,6 +433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.erpEpisodios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpFechaEstreno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpIdiomaPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +472,8 @@
         private System.Windows.Forms.ErrorProvider erpEpisodios;
         private System.Windows.Forms.ErrorProvider erpEstado;
         private System.Windows.Forms.ErrorProvider erpFechaEstreno;
+        private System.Windows.Forms.Label lblIdiomaPrincipal;
+        private System.Windows.Forms.ErrorProvider erpIdiomaPrincipal;
+        private System.Windows.Forms.ComboBox cbxIdiomaPrincipal;
     }
 }
